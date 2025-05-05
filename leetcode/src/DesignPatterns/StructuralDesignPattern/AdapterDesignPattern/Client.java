@@ -1,3 +1,3 @@
 public interface Client {
-    public double getWeightInKg();
+    public int getWeightInKg();
 }
