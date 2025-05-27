@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class UsersService {
@@ -53,8 +54,8 @@ public class UsersService {
     }
 
 
-    public UserResponse getUserById(String id) {
-        Users user = userRepository.findById(Long.valueOf(id)).orElse(null);
+    public UserResponse getUserById(UUID id) {
+        Users user = userRepository.findById(id).orElse(null);
 
         UserResponse response = null;
         if (user == null) {

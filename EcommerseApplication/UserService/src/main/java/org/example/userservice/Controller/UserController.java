@@ -7,6 +7,8 @@ import org.example.userservice.Service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -26,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public UserResponse getUserById(@PathVariable String id){
+    public UserResponse getUserById(@PathVariable UUID id){
         return usersService.getUserById(id);
     }
 }
